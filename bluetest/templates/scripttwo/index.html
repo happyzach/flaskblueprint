@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% from 'macros.html' import navLink %}
+
+<!-- DISPLAYS DIFFERENT NAV LINKS FOR DIFFERENT INDEXES -->
+{% block nav_links %}
+    {% if nav_links %}
+        {% for route, label in nav_links %}
+            {{navLink(route, label)}}
+        {% endfor %}
+    {% endif %}
+    {{navLink('asdfasdfasdf')}}
+{% endblock %}
+
+<!-- MUST HAVE CONTENT BLOCK FOR INTEGRATION WITH LAYOUT -->
+{% block content %}
+<div class="container">
+    <h1>THIS IS THE TEMPLATE FOR INDEX SCRIPTTWO WOOOO</h1>
+    <!-- MUST HAVE CONTENT-LOADER IN ORDER TO LOAD NAV LINKS -->
+    <div id="content-loader" class="container"></div>
+    <div id="url-loader"></div>
+</div>
+{% endblock %}
